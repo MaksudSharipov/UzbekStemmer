@@ -13,4 +13,4 @@ The Uzbek stemming algorithm was created by [Maksud Sharipov, Ulugbek Salaev, Al
 github url: https://github.com/UlugbekSalaev/UzbekStemmer
 pypi.org url: https://pypi.org/project/UzbekStemmer/
 
-pip install UzbekStemmer
+<code>pip install UzbekStemmer</code>
