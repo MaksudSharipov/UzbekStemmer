@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/UzbekStemmer.egg-info/PKG-INFO
+src/UzbekStemmer.egg-info/SOURCES.txt
+src/UzbekStemmer.egg-info/dependency_links.txt
+src/UzbekStemmer.egg-info/top_level.txt
