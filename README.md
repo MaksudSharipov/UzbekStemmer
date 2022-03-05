@@ -1,6 +1,6 @@
 **UzbekStemmer**
 
-version = 0.2.0
+version = 0.2.1
 
 authors = [Maksud Sharipov, Ulugbek Salaev, Allabergan Yuldashev, Jasur Sobirov]
 
