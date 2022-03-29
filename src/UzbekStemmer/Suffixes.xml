@@ -306,7 +306,7 @@
                 <allomorph>v</allomorph>
             </suffix>
             <definition></definition>
-            <join><br>lan</br><br>lash</br></join>
+            <join><br>in</br><br>lan</br><br>lash</br></join>
             <pass><br>xi</br><br>o</br><br>ti</br></pass>
         </element>
 
@@ -333,7 +333,7 @@
         <element id="17">
             <suffix allomorph="false">moq</suffix>
             <definition></definition>
-            <join><br>it</br><br>t</br><br>i</br><br>lan</br><br>sira</br><br>sin</br><br>lash</br><br>aver</br></join>
+            <join><br>sit</br><br>illa</br><br>si</br><br>it</br><br>t</br><br>i</br><br>lan</br><br>sira</br><br>sin</br><br>lash</br><br>aver</br></join>
             <pass></pass>
         </element>
 
@@ -407,7 +407,7 @@
                 <allomorph>dir</allomorph>
             </suffix>
             <definition></definition>
-            <join><br>lan</br><br>t</br></join>
+            <join><br>lan</br><br>t</br><br>in</br></join>
             <pass><br>qi</br><br>so</br><br>lash</br><br>re</br></pass>
         </element>
 
@@ -415,7 +415,7 @@
             <suffix allomorph="false">ir</suffix>
             <definition></definition>
             <join></join>
-            <pass><br>j</br><br>v</br><br>m</br><br>t</br><br>d</br></pass>
+            <pass><br>q</br><br>j</br><br>v</br><br>m</br><br>t</br><br>d</br></pass>
         </element>
 
         <element id="4">
@@ -429,7 +429,7 @@
             <suffix allomorph="false">ar</suffix>
             <definition></definition>
             <join></join>
-            <pass><br>axt</br><br>g</br><br>tq</br><br>ast</br><br>x</br><br>shah</br><br>zg</br><br>zarg</br><br>l</br><br>ask</br></pass>
+            <pass><br>v</br><br>axt</br><br>g</br><br>tq</br><br>ast</br><br>x</br><br>shah</br><br>zg</br><br>zarg</br><br>l</br><br>ask</br></pass>
         </element>
 
         <element id="6">
@@ -449,7 +449,7 @@
             </suffix>
             <definition></definition>
             <join></join>
-            <pass><br>b</br><br>r</br><br>s</br><br>t</br><br>l</br><br>g</br><br>ku</br><br>k</br><br>a</br><br>gu</br><br>qu</br><br>d</br><br>f</br><br>tu</br><br>'</br><br>`</br><br>ng</br><br>i</br><br>qoy</br><br>o</br><br>e</br></pass>
+            <pass><br>z</br><br>b</br><br>tr</br><br>s</br><br>t</br><br>l</br><br>g</br><br>ku</br><br>k</br><br>a</br><br>gu</br><br>qu</br><br>d</br><br>f</br><br>tu</br><br>'</br><br>`</br><br>ng</br><br>i</br><br>qoy</br><br>o</br><br>e</br></pass>
         </element>
 
         <element id="8">
@@ -536,7 +536,7 @@
             <suffix allomorph="false">on</suffix>
             <definition></definition>
             <join><br>j</br><br>langansim</br><br>lagansim</br><br>sim</br><br>si</br></join>
-            <pass><br>x</br><br>y</br><br>k</br><br>i</br><br>si</br><br>n</br><br>r</br><br>d</br><br>v</br><br>z</br><br>q</br><br>'</br><br>`</br><br>t</br><br>g</br><br>shpi</br><br>olv</br><br>rm</br><br>f</br><br>l</br></pass>
+            <pass><br>j</br><br>x</br><br>y</br><br>k</br><br>i</br><br>si</br><br>n</br><br>r</br><br>d</br><br>v</br><br>z</br><br>q</br><br>'</br><br>`</br><br>t</br><br>g</br><br>shpi</br><br>olv</br><br>rm</br><br>f</br><br>l</br></pass>
         </element>
 
         <element id="4">
@@ -610,7 +610,7 @@
             <suffix allomorph="false">oq</suffix>
             <definition></definition>
             <join></join>
-            <pass><br>ch</br><br>avr</br><br>may</br><br>fir</br><br>l</br><br>ard</br><br>g`ir</br><br>g'ir</br></pass>
+            <pass><br>m</br><br>ch</br><br>avr</br><br>may</br><br>fir</br><br>l</br><br>ard</br><br>g`ir</br><br>g'ir</br></pass>
         </element>
 
         <element id="14">
@@ -645,7 +645,7 @@
             <suffix allomorph="false">ir</suffix>
             <definition></definition>
             <join></join>
-            <pass><br>j</br><br>v</br><br>m</br><br>t</br><br>chaq</br><br>d</br></pass>
+            <pass><br>q</br><br>j</br><br>v</br><br>m</br><br>t</br><br>chaq</br><br>d</br></pass>
         </element>
 
         <element id="19">
@@ -809,7 +809,7 @@
                 <allomorph>vchi</allomorph>
             </suffix>
             <definition></definition>
-            <join><br>lan</br><br>tir</br><br>lo</br></join>
+            <join><br>tir</br><br>dir</br><br>lan</br><br>tir</br><br>lo</br></join>
             <pass></pass>
         </element>
 
@@ -914,7 +914,7 @@
             <suffix allomorph="false">a</suffix>
             <definition></definition>
             <join><br>ur</br></join>
-            <pass><br>s</br><br>i</br><br>'</br><br>`</br><br>h</br><br>ss</br><br>x</br><br>r</br><br>qir</br><br>tur</br><br>n</br><br>f</br><br>z</br><br>ch</br><br>l</br><br>t</br><br>sh</br><br>q</br><br>m</br><br>arav</br><br>b</br><br>y</br><br>p</br><br>d</br><br>k</br><br>q</br><br>g</br></pass>
+            <pass><br>j</br><br>s</br><br>i</br><br>'</br><br>`</br><br>h</br><br>ss</br><br>x</br><br>r</br><br>qir</br><br>tur</br><br>n</br><br>f</br><br>z</br><br>ch</br><br>l</br><br>t</br><br>sh</br><br>q</br><br>m</br><br>arav</br><br>b</br><br>y</br><br>p</br><br>d</br><br>k</br><br>q</br><br>g</br></pass>
         </element>
 
         <element id="54">
@@ -935,7 +935,7 @@
             <suffix allomorph="false">an</suffix>
             <definition></definition>
             <join></join>
-            <pass><br>r</br><br>f</br><br>s</br><br>l</br><br>zi</br><br>m</br></pass>
+            <pass><br>d</br><br>r</br><br>f</br><br>s</br><br>l</br><br>zi</br><br>m</br></pass>
         </element>
 
         <element id="57">
@@ -1056,7 +1056,7 @@
             </suffix>
             <definition></definition>
             <join><br>lar</br></join>
-            <pass><br>o</br><br>ni</br><br>n</br><br>h</br><br>s</br><br>ku</br><br>u</br><br>paz</br><br>tu</br><br>usu</br><br>oda</br><br>iz</br><br>ja</br></pass>
+            <pass><br>ra</br><br>o</br><br>ni</br><br>n</br><br>h</br><br>s</br><br>ku</br><br>u</br><br>paz</br><br>tu</br><br>usu</br><br>oda</br><br>iz</br><br>ja</br></pass>
         </element>
 
         <element id="2">
@@ -1075,7 +1075,7 @@
                 <allomorph>miz</allomorph>
             </suffix>
             <definition></definition>
-            <join></join>
+            <join><br>lar</br></join>
             <pass></pass>
         </element>
 
@@ -1096,7 +1096,7 @@
             </suffix>
             <definition></definition>
             <join><br>cha</br><br>lar</br></join>
-            <pass><br>lg</br><br>`</br><br>'</br><br>assort</br><br>dag</br><br>ch</br><br>asalar</br><br>arz</br><br>m</br><br>ikk</br><br>all</br></pass>
+            <pass><br>l</br><br>n</br><br>lg</br><br>`</br><br>'</br><br>assort</br><br>dag</br><br>ch</br><br>asalar</br><br>arz</br><br>m</br><br>ikk</br><br>all</br></pass>
         </element>
 
         <element id="6">
@@ -1135,7 +1135,7 @@
             </suffix>
             <definition></definition>
             <join></join>
-            <pass><br>t</br><br>poy</br><br>m</br><br>d</br><br>lo</br><br>ir</br><br>zi</br><br>mi</br><br>asa</br><br>ni</br><br>ti</br><br>ov</br><br>daqi</br><br>te</br><br>ch</br><br>s</br></pass>
+            <pass><br>ra</br><br>t</br><br>poy</br><br>m</br><br>d</br><br>lo</br><br>ir</br><br>zi</br><br>mi</br><br>asa</br><br>ni</br><br>ti</br><br>ov</br><br>daqi</br><br>te</br><br>ch</br><br>s</br></pass>
         </element>
 
         <element id="11">
@@ -1239,14 +1239,14 @@
             <suffix allomorph="false">ba</suffix>
             <definition></definition>
             <join></join>
-            <pass></pass>
+            <pass><br>zl</br><br>r</br><br>q</br></pass>
         </element>
 
         <element id="2">
             <suffix allomorph="false">be</suffix>
             <definition></definition>
             <join></join>
-            <pass><br>ton</br></pass>
+            <pass><br>l</br><br>ja</br><br>jir</br><br>ton</br></pass>
         </element>
 
         <element id="3">
@@ -1260,7 +1260,7 @@
             <suffix allomorph="false">bar</suffix>
             <definition></definition>
             <join></join>
-            <pass></pass>
+            <pass><br>av</br><br>dosh</br></pass>
         </element>
 
         <element id="5">

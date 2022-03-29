@@ -5,7 +5,7 @@ version = 0.2.1
 authors = [Maksud Sharipov, Ulugbek Salaev, Allabergan Yuldashev, Jasur Sobirov]
 
 maqsbek72@gmail.com ,
-ulugbek0302@gmail.com
+ulugbek0302@gmail.com 
 
 
 Uzbek Stemmer for Python
