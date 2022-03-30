@@ -5,15 +5,16 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="UzbekStemmer",
-    version="0.2.0",
-    author="Maksud Sharipov, Ulugbek Salaev, Allabergan Yuldashev, Jasur Sobirov",
-    author_email="ulugbek0302@gmail.com",
+    version="0.2.6",
+    author="Maksud Sharipov, Ulugbek Salaev, Ollabergan Yuldashev, Jasur Sobirov",
+    author_email="maqsbek72@gmail.com, ulugbek0302@gmail.com, ollaberganyuldashov@gmail.com",
     description="Uzbek Stemmer for Python",
-    long_description="The Uzbek stemming algorithm was created by [Maksud Sharipov, Ulugbek Salaev, Allabergan Yuldashev, Jasur Sobirov]. It stems all Uzbek words and it is not included any lexicon.",
-    long_description_content_type="Uzbek Stemmer for Python",
-    url="https://github.com/UlugbekSalaev/UzbekStemmer",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    include_package_data = True,
+    url="https://github.com/MaksudSharipov/UzbekStemmer",
     project_urls={
-        "Bug Tracker": "https://github.com/UlugbekSalaev/UzbekStemmer",
+        "Bug Tracker": "https://github.com/MaksudSharipov/UzbekStemmer",
     },
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -22,5 +23,9 @@ setuptools.setup(
     ],
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
-    python_requires=">=3.6",
+    python_requires=">=3.9",
+    install_requires=[
+        "nltk",
+        "lxml",
+    ]
 )

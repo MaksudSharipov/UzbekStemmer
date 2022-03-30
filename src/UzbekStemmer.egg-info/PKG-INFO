@@ -1,19 +1,39 @@
 Metadata-Version: 2.1
 Name: UzbekStemmer
-Version: 0.2.0
+Version: 0.2.5
 Summary: Uzbek Stemmer for Python
-Home-page: https://github.com/UlugbekSalaev/UzbekStemmer
-Author: Maksud Sharipov, Ulugbek Salaev, Allabergan Yuldashev, Jasur Sobirov
-Author-email: ulugbek0302@gmail.com
+Home-page: https://github.com/MaksudSharipov/UzbekStemmer
+Author: Maksud Sharipov, Ulugbek Salaev, Ollabergan Yuldashev, Jasur Sobirov
+Author-email: maqsbek72@gmail.com, ulugbek0302@gmail.com, ollaberganyuldashov@gmail.com
 License: UNKNOWN
-Project-URL: Bug Tracker, https://github.com/UlugbekSalaev/UzbekStemmer
+Project-URL: Bug Tracker, https://github.com/MaksudSharipov/UzbekStemmer
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
-Requires-Python: >=3.6
-Description-Content-Type: Uzbek Stemmer for Python
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
 License-File: LICENSE
 
+**UzbekStemmer**
+
+version = 0.2.5
+
+authors = [Maksud Sharipov, Ulugbek Salaev, Allabergan Yuldashev, Jasur Sobirov]
+
+Uzbek Stemmer for Python
+
 The Uzbek stemming algorithm was created by [Maksud Sharipov, Ulugbek Salaev, Allabergan Yuldashev, Jasur Sobirov]. It stems all Uzbek words and it is not included any lexicon.
+
+github url: https://github.com/MaksudSharipov/UzbekStemmer
+
+pypi.org url: https://pypi.org/project/UzbekStemmer/
+
+<code>pip install UzbekStemmer</code>
+```
+Example:
+from UzbekStemmer import UzbekStemmer as obj
+print(obj.WordStemmer("bolalaringizmi"))
+Result: "bola"
+```
 
