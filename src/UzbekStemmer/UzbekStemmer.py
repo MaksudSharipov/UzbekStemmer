@@ -1,27 +1,27 @@
 from lxml import etree
 from nltk.tokenize import RegexpTokenizer
-
-class UzbekStemmer:
-    global root
-    tree = etree.parse("Suffixes.xml")
-    root = tree.getroot()
+from pathlib import Path
+global root
+this_directory = Path(__file__).parent
+tree = etree.parse(this_directory/"Suffixes.xml")
+root = tree.getroot()
 
     #qoshimchani tekshirish
-    def _checkerSuffix(word, suffix):
+def _checkerSuffix(word, suffix):
         b = False
         if(str(suffix) == word[-len(suffix):]):
             b=True
         return b
 
     #qoshimchani qirqish
-    def _cutSuffix(word,suffix):
-        if UzbekStemmer._checkerSuffix(word,suffix):
+def _cutSuffix(word,suffix):
+        if _checkerSuffix(word,suffix):
             return word[:-len(suffix)]
         else:
             return word
 
     #soz asosini aniqlash
-    def _rootWord(word, suffixesClassId, matrixFSM):
+def _rootWord(word, suffixesClassId, matrixFSM):
 
         global root
         stop = False
@@ -38,14 +38,14 @@ class UzbekStemmer:
                         if root[suffixesClassId - 1][number - 1][0].get('allomorph') == 'false':
                             suffix = root[suffixesClassId - 1][number - 1][0].text
 
-                            if UzbekStemmer._checkerSuffix(word,suffix):
+                            if _checkerSuffix(word,suffix):
                                 oldWord = word
-                                word = UzbekStemmer._cutSuffix(word,suffix)
+                                word = _cutSuffix(word,suffix)
 
                                 #pass ni tekshirish
                                 mistake = False
                                 for subelem in root[suffixesClassId-1][number-1][3]:
-                                    if UzbekStemmer._checkerSuffix(word,subelem.text):
+                                    if _checkerSuffix(word,subelem.text):
                                         mistake = True
                                 if mistake:
                                     word = oldWord
@@ -74,8 +74,8 @@ class UzbekStemmer:
 
                                     # join ni tekshirish
                                     for subelem in root[suffixesClassId - 1][number - 1][2]:
-                                        if UzbekStemmer._checkerSuffix(word, subelem.text) and ((len(UzbekStemmer._cutSuffix(word,subelem.text)) > 2) | (UzbekStemmer._cutSuffix(word,subelem.text) in minWords)):
-                                            word = UzbekStemmer._cutSuffix(word, subelem.text)
+                                        if _checkerSuffix(word, subelem.text) and ((len(_cutSuffix(word,subelem.text)) > 2) | (_cutSuffix(word,subelem.text) in minWords)):
+                                            word = _cutSuffix(word, subelem.text)
                                             Final = True
 
                                             transition = {
@@ -103,14 +103,14 @@ class UzbekStemmer:
                             for allomorph in root[suffixesClassId - 1][number - 1][0]:
                                 suffix = allomorph.text
 
-                                if UzbekStemmer._checkerSuffix(word, suffix):
+                                if _checkerSuffix(word, suffix):
                                     oldWord = word
-                                    word = UzbekStemmer._cutSuffix(word, suffix)
+                                    word = _cutSuffix(word, suffix)
 
                                     # pass ni tekshirish
                                     mistake = False
                                     for subelem in root[suffixesClassId - 1][number - 1][3]:
-                                        if UzbekStemmer._checkerSuffix(word, subelem.text):
+                                        if _checkerSuffix(word, subelem.text):
                                             mistake = True
                                     if mistake:
                                         word = oldWord
@@ -141,8 +141,8 @@ class UzbekStemmer:
 
                                         # join ni tekshirish
                                         for subelem in root[suffixesClassId - 1][number - 1][2]:
-                                            if UzbekStemmer._checkerSuffix(word, subelem.text) and ((len(UzbekStemmer._cutSuffix(word,subelem.text)) > 2) | (UzbekStemmer._cutSuffix(word,subelem.text) in minWords)):
-                                                word = UzbekStemmer._cutSuffix(word, subelem.text)
+                                            if _checkerSuffix(word, subelem.text) and ((len(_cutSuffix(word,subelem.text)) > 2) | (_cutSuffix(word,subelem.text) in minWords)):
+                                                word = _cutSuffix(word, subelem.text)
                                                 Final = True
 
                                                 transition = {
@@ -189,7 +189,7 @@ class UzbekStemmer:
 
         return word, Way
 
-    def _tensePerson(word):
+def _tensePerson(word):
         matrixFSM = [
             ['A', 0, [1], [2, 14, 15, 16, 17, 20, 21], [3, 4, 6, 7], [5], [9, 10, 12, 13], [11], [22], [19], [23, 24],
              0, 0, -1],
@@ -205,18 +205,18 @@ class UzbekStemmer:
             ['K', 0, 0, [8, 18], 0, 0, 0, 0, 0, 0, 0, 0, 0, -2],
             ['L', 0, [1], [2], [6, 7], 0, 0, 0, 0, [19], 0, [12, 13], 0, -2]
         ]
-        return UzbekStemmer._rootWord(word,1,matrixFSM)
+        return _rootWord(word,1,matrixFSM)
 
-    def _verb(word):
+def _verb(word):
         matrixFSM = [
             ['A', 0, [1, 3, 7, 8, 9, 10, 11, 12, 13], [2, 4, 5, 6, 14, 15, 16, 17, 18, 19, 20, 21, 22], [23], -1],
             ['B', 0, 0, [19], 0, -1],
             ['C', 0, 0, 0, 0, -1],
             ['D', 0, [1, 3], [2, 4, 5, 6], 0, -2]
         ]
-        return UzbekStemmer._rootWord(word,2,matrixFSM)
+        return _rootWord(word,2,matrixFSM)
 
-    def _relative(word):
+def _relative(word):
         matrixFSM = [
             ['A', 0, [1, 3, 4, 5, 6, 8, 10, 11, 12], [2], [7, 9], [13], 0, -1],
             ['B', 0, 0, 0, 0, 0, 0, -1],
@@ -225,9 +225,9 @@ class UzbekStemmer:
             ['E', 0, [1, 3, 4, 5, 6, 8, 10, 11], [2], [7, 9], 0, 0, -1],
             ['F', 0, [3, 4, 6], 0, 0, 0, 0, -1]
         ]
-        return UzbekStemmer._rootWord(word,3,matrixFSM)
+        return _rootWord(word,3,matrixFSM)
 
-    def _derivational(word):
+def _derivational(word):
         matrixFSM = [
             ['A', 0, [1], [2],
              [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 23, 26, 27, 28, 29, 30, 31, 32, 33,
@@ -244,9 +244,9 @@ class UzbekStemmer:
              [22, 23, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49,
               50], 0, 0, 0, -1]
         ]
-        return UzbekStemmer._rootWord(word,4,matrixFSM)
+        return _rootWord(word,4,matrixFSM)
 
-    def _noun(word):
+def _noun(word):
         matrixFSM = [
             ['A', 0, [1, 2, 3, 4, 5, 22, 23], [6, 7, 8, 9, 10, 11, 12], [13, 14, 15], [16], [17], [18, 19, 20, 21], 0,
              0, 0, 0, 0, -1],
@@ -263,16 +263,16 @@ class UzbekStemmer:
             ['K', 0, [1, 2, 3, 4, 5], 0, 0, 0, 0, 0, 0, [6, 7, 8, 9, 10, 11, 12], [13, 14, 15], 0, 0, -1],
             ['L', 0, [1, 2, 3, 4, 5, 22, 23], 0, 0, 0, 0, 0, 0, [6, 7, 8, 9, 10, 11, 12], [13, 14, 15], [16], 0, -2]
         ]
-        return UzbekStemmer._rootWord(word,5,matrixFSM)
+        return _rootWord(word,5,matrixFSM)
 
-    def _number(word):
+def _number(word):
         matrixFSM = [
             ['A', 0, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], -1],
             ['B', 0, 0, -1]
         ]
-        return UzbekStemmer._rootWord(word,7,matrixFSM)
+        return _rootWord(word,7,matrixFSM)
 
-    def _prefixes(word):
+def _prefixes(word):
 
         global root
         suffixesClassId=6
@@ -311,13 +311,13 @@ class UzbekStemmer:
 
         return word,Way
 
-    def _joinDict(dict1, dict2):
+def _joinDict(dict1, dict2):
         for i in range(1, len(dict2) + 1):
             dict1[len(dict1) + 1] = dict2[i]
         return dict1
 
 
-    def WordStemmer(word):
+def UzStemmer(word):
         words = []
         ways = []
         tempWord = ""
@@ -329,12 +329,12 @@ class UzbekStemmer:
         tempWay1.clear()
 
         # Noun
-        tempWord, tempWay2 = UzbekStemmer._noun(tempWord)
-        tempWay1 = UzbekStemmer._joinDict(tempWay1, tempWay2)
+        tempWord, tempWay2 = _noun(tempWord)
+        tempWay1 = _joinDict(tempWay1, tempWay2)
 
         # Number
-        tempWord, tempWay2 = UzbekStemmer._number(tempWord)
-        tempWay1 = UzbekStemmer._joinDict(tempWay1,tempWay2)
+        tempWord, tempWay2 = _number(tempWord)
+        tempWay1 = _joinDict(tempWay1,tempWay2)
 
         words.append(tempWord)
         ways.append(dict(tempWay1))
@@ -344,16 +344,16 @@ class UzbekStemmer:
         tempWay1.clear()
 
         # Noun
-        tempWord, tempWay2 = UzbekStemmer._noun(tempWord)
-        tempWay1 = UzbekStemmer._joinDict(tempWay1, tempWay2)
+        tempWord, tempWay2 = _noun(tempWord)
+        tempWay1 = _joinDict(tempWay1, tempWay2)
 
         # Derivational
-        tempWord, tempWay2 = UzbekStemmer._derivational(tempWord)
-        tempWay1 = UzbekStemmer._joinDict(tempWay1, tempWay2)
+        tempWord, tempWay2 = _derivational(tempWord)
+        tempWay1 = _joinDict(tempWay1, tempWay2)
 
         # Prefixes
-        tempWord, tempWay2 = UzbekStemmer._prefixes(tempWord)
-        tempWay1 = UzbekStemmer._joinDict(tempWay1, tempWay2)
+        tempWord, tempWay2 = _prefixes(tempWord)
+        tempWay1 = _joinDict(tempWay1, tempWay2)
 
         words.append(tempWord)
         ways.append(dict(tempWay1))
@@ -363,24 +363,24 @@ class UzbekStemmer:
         tempWay1.clear()
 
         # Noun
-        tempWord, tempWay2 = UzbekStemmer._noun(tempWord)
-        tempWay1 = UzbekStemmer._joinDict(tempWay1, tempWay2)
+        tempWord, tempWay2 = _noun(tempWord)
+        tempWay1 = _joinDict(tempWay1, tempWay2)
 
         # Verb
-        tempWord, tempWay2 = UzbekStemmer._verb(tempWord)
-        tempWay1 = UzbekStemmer._joinDict(tempWay1, tempWay2)
+        tempWord, tempWay2 = _verb(tempWord)
+        tempWay1 = _joinDict(tempWay1, tempWay2)
 
         # Relative
-        tempWord, tempWay2 = UzbekStemmer._relative(tempWord)
-        tempWay1 = UzbekStemmer._joinDict(tempWay1, tempWay2)
+        tempWord, tempWay2 = _relative(tempWord)
+        tempWay1 = _joinDict(tempWay1, tempWay2)
 
         # Derivational
-        tempWord, tempWay2 = UzbekStemmer._derivational(tempWord)
-        tempWay1 = UzbekStemmer._joinDict(tempWay1, tempWay2)
+        tempWord, tempWay2 = _derivational(tempWord)
+        tempWay1 = _joinDict(tempWay1, tempWay2)
 
         # Prefixes
-        tempWord, tempWay2 = UzbekStemmer._prefixes(tempWord)
-        tempWay1 = UzbekStemmer._joinDict(tempWay1, tempWay2)
+        tempWord, tempWay2 = _prefixes(tempWord)
+        tempWay1 = _joinDict(tempWay1, tempWay2)
 
         words.append(tempWord)
         ways.append(dict(tempWay1))
@@ -390,24 +390,24 @@ class UzbekStemmer:
         tempWay1.clear()
 
         # TensePerson
-        tempWord, tempWay2 = UzbekStemmer._tensePerson(tempWord)
-        tempWay1 = UzbekStemmer._joinDict(tempWay1, tempWay2)
+        tempWord, tempWay2 = _tensePerson(tempWord)
+        tempWay1 = _joinDict(tempWay1, tempWay2)
 
         # Verb
-        tempWord, tempWay2 = UzbekStemmer._verb(tempWord)
-        tempWay1 = UzbekStemmer._joinDict(tempWay1, tempWay2)
+        tempWord, tempWay2 = _verb(tempWord)
+        tempWay1 = _joinDict(tempWay1, tempWay2)
 
         # Relative
-        tempWord, tempWay2 = UzbekStemmer._relative(tempWord)
-        tempWay1 = UzbekStemmer._joinDict(tempWay1, tempWay2)
+        tempWord, tempWay2 = _relative(tempWord)
+        tempWay1 = _joinDict(tempWay1, tempWay2)
 
         # Derivational
-        tempWord, tempWay2 = UzbekStemmer._derivational(tempWord)
-        tempWay1 = UzbekStemmer._joinDict(tempWay1, tempWay2)
+        tempWord, tempWay2 = _derivational(tempWord)
+        tempWay1 = _joinDict(tempWay1, tempWay2)
 
         # Prefixes
-        tempWord, tempWay2 = UzbekStemmer._prefixes(tempWord)
-        tempWay1 = UzbekStemmer._joinDict(tempWay1, tempWay2)
+        tempWord, tempWay2 = _prefixes(tempWord)
+        tempWay1 = _joinDict(tempWay1, tempWay2)
 
         words.append(tempWord)
         ways.append(dict(tempWay1))
@@ -426,11 +426,11 @@ class UzbekStemmer:
         return words[min_words_id]
 
 
-    def ArticleStemmer(raw):
+def ArticleStemmer(raw):
         stemmedraw=""
         tokenize = RegexpTokenizer("[\w`'‘‘‘’‘-]+")
         tokens = tokenize.tokenize(raw)
         for token in tokens:
-            stemmedraw  = stemmedraw + str(UzbekStemmer.WordStemmer(token)) + "\n"
+            stemmedraw  = stemmedraw + str(WordStemmer(token)) + "\n"
 
         return stemmedraw + str(len(tokens))

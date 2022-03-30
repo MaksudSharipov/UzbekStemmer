@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: UzbekStemmer
-Version: 0.2.2
+Version: 0.2.5
 Summary: Uzbek Stemmer for Python
 Home-page: https://github.com/MaksudSharipov/UzbekStemmer
 Author: Maksud Sharipov, Ulugbek Salaev, Ollabergan Yuldashev, Jasur Sobirov
@@ -11,20 +11,15 @@ Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
-Requires-Python: >=3.8
+Requires-Python: >=3.9
 Description-Content-Type: text/markdown
 License-File: LICENSE
 
 **UzbekStemmer**
 
-version = 0.2.2
+version = 0.2.5
 
 authors = [Maksud Sharipov, Ulugbek Salaev, Allabergan Yuldashev, Jasur Sobirov]
-
-maqsbek72@gmail.com ,
-ulugbek0302@gmail.com,
- ollaberganyuldashov@gmail.com
-
 
 Uzbek Stemmer for Python
 
@@ -39,6 +34,6 @@ pypi.org url: https://pypi.org/project/UzbekStemmer/
 Example:
 from UzbekStemmer import UzbekStemmer as obj
 print(obj.WordStemmer("bolalaringizmi"))
-Result: bola
+Result: "bola"
 ```
 
