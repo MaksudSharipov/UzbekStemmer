@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: UzbekStemmer
-Version: 0.2.5
+Version: 0.2.6
 Summary: Uzbek Stemmer for Python
 Home-page: https://github.com/MaksudSharipov/UzbekStemmer
 Author: Maksud Sharipov, Ulugbek Salaev, Ollabergan Yuldashev, Jasur Sobirov
@@ -17,7 +17,7 @@ License-File: LICENSE
 
 **UzbekStemmer**
 
-version = 0.2.5
+version = 0.2.6
 
 authors = [Maksud Sharipov, Ulugbek Salaev, Allabergan Yuldashev, Jasur Sobirov]
 
@@ -32,8 +32,9 @@ pypi.org url: https://pypi.org/project/UzbekStemmer/
 <code>pip install UzbekStemmer</code>
 ```
 Example:
-from UzbekStemmer import UzbekStemmer as obj
-print(obj.WordStemmer("bolalaringizmi"))
-Result: "bola"
+from UzbekStemmer import UzbekStemmer as uzstem
+print(uzstem.UzStemmer('Bolalarimizdanmisizlar'))
+
+Result: "Bola"
 ```
 
