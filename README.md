@@ -20,3 +20,4 @@ print(uzstem.Stemmer('Bolalarimizdanmisizlar'))
 
 Result: "Bola"
 ```
+26.05.2022 16:51
