@@ -18,6 +18,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 Example:
-from UzbekStemmer import UzbekStemmer as obj
-print(obj.WordStemmer("bolalaringizmi"))
+from UzbekNLP.Stemmer import Stemmer as obj
+print(obj.Stemmer("bolalaringizmi"))
 Result: bola

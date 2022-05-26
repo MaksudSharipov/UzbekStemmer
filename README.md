@@ -1,22 +1,22 @@
-**UzbekStemmer**
+**UzbekNLP**
 
-version = 0.2.6
+version = 0.0.1
 
-authors = [Maksud Sharipov, Ulugbek Salaev, Allabergan Yuldashev, Jasur Sobirov]
+authors = [Maksud Sharipov, Allabergan Yuldashev]
 
-Uzbek Stemmer for Python
+Uzbek NLP tools for Python
 
-The Uzbek stemming algorithm was created by [Maksud Sharipov, Ulugbek Salaev, Allabergan Yuldashev, Jasur Sobirov]. It stems all Uzbek words and it is not included any lexicon.
+The UzbekNLP: NLP tools for Uzbek language  was created by [Maksud Sharipov, Allabergan Yuldashev]. 
 
-github url: https://github.com/MaksudSharipov/UzbekStemmer
+github url: https://github.com/MaksudSharipov/UzbekNLP
 
-pypi.org url: https://pypi.org/project/UzbekStemmer/
+pypi.org url: https://pypi.org/project/UzbekNLP/
 
-<code>pip install UzbekStemmer</code>
+<code>pip install UzbekNLP</code>
 ```
 Example:
-from UzbekStemmer import UzbekStemmer as uzstem
-print(uzstem.UzStemmer('Bolalarimizdanmisizlar'))
+from UzbekNLP.Stemmer import Stemmer as uzstem
+print(uzstem.Stemmer('Bolalarimizdanmisizlar'))
 
 Result: "Bola"
 ```
