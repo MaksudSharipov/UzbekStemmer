@@ -12,7 +12,7 @@ github url: https://github.com/MaksudSharipov/UzbekNLP
 
 pypi.org url: https://pypi.org/project/UzbekNLP/
 
-<code>pip install UzbekStemmer</code>
+<code> pip install UzbekStemmer</code>
 ```
 Example:
 from UzbekNLP.Stemmer import Stemmer as uzstem
